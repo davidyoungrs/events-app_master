@@ -1,0 +1,52 @@
+{
+    "meta": {
+        "eventName": "Celeros Channel Partner Event 2026",
+        "dates": "January 14th - 16th, 2026",
+        "location": "Houston, Texas",
+        "timezone": "America/Chicago",
+        "supportEmail": "events@celerosft.com",
+        "emergencyPhone": "+1 (713) 555-0123",
+        "quickLinks": [
+            {
+                "id": "q1",
+                "label": "HOTEL INFO",
+                "span": 1
+            },
+            {
+                "id": "q2",
+                "label": "MAP",
+                "span": 1
+            },
+            {
+                "id": "q3",
+                "label": "SITE TOUR",
+                "span": 2
+            }
+        ]
+    },
+    "branding": {
+        "heroImage": "/copes-vulcan-hero.svg",
+        "logo": "/celeros-logo.svg",
+        "colors": {
+            "primary": "#4BC0D9",
+            "secondary": "#2D3E50",
+            "accent": "#F5A623",
+            "background": "#0F172A",
+            "surface": "#1E293B"
+        },
+        "fontFamily": "'Inter', -apple-system, sans-serif"
+    },
+    "features": {
+        "showWeather": true,
+        "showDiscover": true,
+        "showInfo": true,
+        "enableRegistration": false
+    },
+    "contact": {
+        "venue": {
+            "name": "JW Marriott Houston by The Galleria",
+            "address": "5150 Westheimer Rd, Houston, TX 77056",
+            "mapUrl": "https://maps.app.goo.gl/..."
+        }
+    }
+}

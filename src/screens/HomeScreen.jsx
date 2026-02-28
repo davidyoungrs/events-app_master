@@ -1,14 +1,15 @@
 import { Calendar, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import config from '../data/eventConfig.json';
 
 export default function HomeScreen() {
     const navigate = useNavigate();
     const [timeLeft, setTimeLeft] = useState(null);
 
     useEffect(() => {
-        // Event start date: April 15, 2026, 8:00 AM CDT (UTC-5)
-        const eventDate = new Date('2026-04-15T08:00:00-05:00').getTime();
+        // Event start date from config
+        const eventDate = new Date(config.meta.startDate).getTime();
 
         const calculateTimeLeft = () => {
             const now = new Date().getTime();
@@ -30,6 +31,11 @@ export default function HomeScreen() {
         return () => clearInterval(timer);
     }, []);
 
+    // Helper to safely split the event Name into Title / Subtitle if it contains spaces
+    const words = config.meta.eventName.split(' ');
+    const titleFirstHalf = words.slice(0, words.length > 2 ? words.length - 2 : 1).join(' ');
+    const titleSecondHalf = words.slice(words.length > 2 ? words.length - 2 : 1).join(' ');
+
     return (
         <div className="home-screen">
             {/* Hero Section with Background Image */}
@@ -37,31 +43,33 @@ export default function HomeScreen() {
                 <div className="hero-overlay"></div>
 
                 <div className="hero-content flex flex-col items-center text-center">
-                    <div className="event-icon-container drop-shadow-lg" style={{ width: 'auto', padding: '0 20px', backgroundColor: 'transparent', border: 'none' }}>
-                        <img src="/copes-vulcan-hero.svg" alt="Copes-Vulcan" style={{ height: '40px' }} />
-                    </div>
+                    {config.branding.heroImage && (
+                        <div className="event-icon-container drop-shadow-lg" style={{ width: 'auto', padding: '0 20px', backgroundColor: 'transparent', border: 'none' }}>
+                            <img src={config.branding.heroImage} alt="Event Hero" style={{ height: '40px' }} />
+                        </div>
+                    )}
                     <h1 className="hero-title drop-shadow-xl text-shadow">
-                        Celeros Channel Partner <br />
-                        <span className="text-blue drop-shadow-md">Event 2026</span>
+                        {titleFirstHalf} <br />
+                        <span className="text-blue drop-shadow-md" style={{ color: config.branding.colors.primary }}>{titleSecondHalf}</span>
                     </h1>
 
                     <div className="event-meta flex flex-col gap-2 mt-4 drop-shadow-xl text-white font-bold text-shadow-strong">
                         <div className="meta-item flex items-center justify-center gap-2">
-                            <Calendar size={18} color="#2D88FF" />
-                            <span>April 15-17, 2026</span>
+                            <Calendar size={18} color={config.branding.colors.primary} />
+                            <span>{config.meta.dates}</span>
                         </div>
                         <div className="meta-item flex items-center justify-center gap-2">
-                            <MapPin size={18} color="#2D88FF" />
-                            <span>Houston, Texas</span>
+                            <MapPin size={18} color={config.branding.colors.primary} />
+                            <span>{config.meta.location}</span>
                         </div>
                     </div>
 
                     <p className="hero-desc mt-6 font-bold drop-shadow-xl text-light-fixed text-shadow-strong whitespace-pre-line">
-                        The Power of Connection: Driving the Future of our Flow Control
+                        {config.meta.eventSubtitle}
                     </p>
 
                     <div className="hero-actions flex flex-col w-full gap-4 mt-8">
-                        <button className="btn-primary" onClick={() => navigate('/schedule')}>
+                        <button className="btn-primary" onClick={() => navigate('/schedule')} style={{ backgroundColor: config.branding.colors.primary, borderColor: config.branding.colors.primary }}>
                             Event Schedule &rarr;
                         </button>
                     </div>
@@ -70,15 +78,15 @@ export default function HomeScreen() {
                     {timeLeft && (
                         <div className="mt-10 flex gap-4 drop-shadow-2xl text-light-fixed animate-fade-in">
                             <div className="flex flex-col items-center bg-black-60 backdrop-blur-md rounded-2xl p-4 min-w-[100px] border border-white border-opacity-30 shadow-2xl">
-                                <span className="text-sm font-bold uppercase tracking-widest mb-1 opacity-90 text-blue">Days</span>
+                                <span className="text-sm font-bold uppercase tracking-widest mb-1 opacity-90" style={{ color: config.branding.colors.primary }}>Days</span>
                                 <span className="text-5xl font-black tracking-tight">{timeLeft.days}</span>
                             </div>
                             <div className="flex flex-col items-center bg-black-60 backdrop-blur-md rounded-2xl p-4 min-w-[100px] border border-white border-opacity-30 shadow-2xl">
-                                <span className="text-sm font-bold uppercase tracking-widest mb-1 opacity-90 text-blue">Hours</span>
+                                <span className="text-sm font-bold uppercase tracking-widest mb-1 opacity-90" style={{ color: config.branding.colors.primary }}>Hours</span>
                                 <span className="text-5xl font-black tracking-tight">{timeLeft.hours}</span>
                             </div>
                             <div className="flex flex-col items-center bg-black-60 backdrop-blur-md rounded-2xl p-4 min-w-[100px] border border-white border-opacity-30 shadow-2xl">
-                                <span className="text-sm font-bold uppercase tracking-widest mb-1 opacity-90 text-blue">Mins</span>
+                                <span className="text-sm font-bold uppercase tracking-widest mb-1 opacity-90" style={{ color: config.branding.colors.primary }}>Mins</span>
                                 <span className="text-5xl font-black tracking-tight">{timeLeft.minutes}</span>
                             </div>
                         </div>
@@ -87,36 +95,34 @@ export default function HomeScreen() {
             </div>
 
             {/* Stats Section */}
-            <div className="stats-section grid-2x2 gap-6 mt-8">
-                <div className="stat-card flex flex-col items-center">
-                    <span className="stat-number">120+</span>
-                    <span className="stat-label">ATTENDEES</span>
+            {config.meta.stats && config.meta.stats.length > 0 && (
+                <div className="stats-section grid-2x2 gap-6 mt-8">
+                    {config.meta.stats.map((stat, index) => (
+                        <div key={index} className="stat-card flex flex-col items-center" style={stat.span ? { gridColumn: `span ${stat.span}` } : {}}>
+                            <span className="stat-number">{stat.number}</span>
+                            <span className="stat-label">{stat.label}</span>
+                        </div>
+                    ))}
                 </div>
-                <div className="stat-card flex flex-col items-center">
-                    <span className="stat-number">15+</span>
-                    <span className="stat-label">SPEAKERS</span>
-                </div>
-                <div className="stat-card flex flex-col items-center" style={{ gridColumn: 'span 2' }}>
-                    <span className="stat-number">1</span>
-                    <span className="stat-label">SITE TOUR</span>
-                </div>
-            </div>
+            )}
 
             {/* Venue Section */}
-            <div className="venue-section mt-8 mb-6">
-                <h3 className="section-title">Event Venue</h3>
-                <a
-                    href="https://www.hyatt.com/hyatt-regency/en-US/houro-hyatt-regency-houston-west?src=agn_koddi_crp_chico_ppc_21847613925_Conversion_Regency_Google_Search_English_HOURO_Houston_Paid_Brand_CrossDevice_1x1_google_Koddi-TopUp-Evergreen-Brand_e_hyatt%20regency%20houston%20west&gad_source=1&gad_campaignid=21847613925&gclid=CjwKCAiA-__MBhAKEiwASBmsBILg-7IRmpJbpdqfsExOP9SbPevH0yDf9LZjvdNfMYDms7nvVccDiRoCJCcQAvD_BwE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="venue-card-hero mt-4 block"
-                >
-                    <div className="venue-hero-overlay flex flex-col justify-end p-5">
-                        <h4 className="text-white font-bold text-xl mb-1 drop-shadow-md">Hyatt Regency Houston West</h4>
-                        <p className="text-white text-opacity-100 text-sm drop-shadow-md font-medium">An elegant business hub in the Energy Corridor of Houston, Texas.</p>
-                    </div>
-                </a>
-            </div>
+            {config.meta.venue && (
+                 <div className="venue-section mt-8 mb-6">
+                 <h3 className="section-title">Event Venue</h3>
+                 <a
+                     href={config.meta.venue.url}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="venue-card-hero mt-4 block"
+                 >
+                     <div className="venue-hero-overlay flex flex-col justify-end p-5">
+                         <h4 className="text-white font-bold text-xl mb-1 drop-shadow-md">{config.meta.venue.name}</h4>
+                         <p className="text-white text-opacity-100 text-sm drop-shadow-md font-medium">{config.meta.venue.description}</p>
+                     </div>
+                 </a>
+             </div>
+            )}
         </div>
     );
 }

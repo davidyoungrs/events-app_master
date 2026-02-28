@@ -1,5 +1,5 @@
 {
-  "name": "celeros-event-app",
+  "name": "event-app_master",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "jimp": "^0.16.13",
     "lucide-react": "^0.575.0",
     "papaparse": "^5.5.3",
-    "potrace": "^2.1.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1"

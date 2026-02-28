@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Play, Calendar, MapPin } from 'lucide-react';
 import { loadScheduleData, loadPresentersData } from '../utils/dataLoader';
+import config from '../data/eventConfig.json';
+
+import EventCard from '../components/EventCard';
+import SpeakerProfile from '../components/SpeakerProfile';
+import SectionHeader from '../components/SectionHeader';
 
 export default function ScheduleScreen() {
     const [activeTab, setActiveTab] = useState(1);
@@ -10,6 +15,10 @@ export default function ScheduleScreen() {
     useEffect(() => {
         loadScheduleData().then(data => {
             setScheduleData(data);
+            const days = Object.keys(data).map(Number).sort((a, b) => a - b);
+            if (days.length > 0 && !days.includes(activeTab)) {
+                setActiveTab(days[0]);
+            }
         }).catch(err => {
             console.error("Failed to load schedule:", err);
         });
@@ -26,97 +35,76 @@ export default function ScheduleScreen() {
 
     // If data isn't loaded yet, we render a skeleton or the static parts to keep it "invisible"
     const currentDaySchedule = scheduleData ? scheduleData[activeTab] || [] : [];
+    const availableDays = scheduleData ? Object.keys(scheduleData).map(Number).sort((a, b) => a - b) : [1];
+    const startDate = new Date(config.meta.startDate);
 
     return (
         <div className="schedule-screen pt-header">
             {/* Day Tabs */}
             <div className="day-tabs flex w-full">
-                {[1, 2, 3].map((day) => (
-                    <button
-                        key={day}
-                        onClick={() => {
-                            setActiveTab(day);
-                            window.scrollTo(0, 0);
-                            const contentArea = document.querySelector('.content-area');
-                            if (contentArea) contentArea.scrollTo(0, 0);
-                        }}
-                        className={`day-tab flex-1 py-3 text-center transition-all ${activeTab === day ? 'active' : ''}`}
-                    >
-                        <span className={`block font-medium ${activeTab === day ? 'text-white' : 'text-gray'}`}>Day {day}</span>
-                        <span className={`block text-xs uppercase mt-1 ${activeTab === day ? 'text-blue' : 'text-gray'}`}>
-                            APR {14 + day}
-                        </span>
-                    </button>
-                ))}
+                {availableDays.map((day) => {
+                    const dayDate = new Date(startDate);
+                    dayDate.setDate(startDate.getDate() + (day - 1));
+                    const dateString = dayDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+
+                    return (
+                        <button
+                            key={day}
+                            onClick={() => {
+                                setActiveTab(day);
+                                window.scrollTo(0, 0);
+                                const contentArea = document.querySelector('.content-area');
+                                if (contentArea) contentArea.scrollTo(0, 0);
+                            }}
+                            className={`day-tab flex-1 py-3 text-center transition-all ${activeTab === day ? 'active bg-surface-hover' : ''}`}
+                            style={{ borderBottom: activeTab === day ? `2px solid ${config.branding.colors.primary}` : 'none' }}
+                        >
+                            <span className={`block font-medium ${activeTab === day ? 'text-white' : 'text-gray'}`}>Day {day}</span>
+                            <span className={`block text-xs uppercase mt-1 ${activeTab === day ? 'text-blue' : 'text-gray'}`}
+                                style={{ color: activeTab === day ? config.branding.colors.primary : undefined }}>
+                                {dateString}
+                            </span>
+                        </button>
+                    );
+                })}
             </div>
 
             <div className="p-4">
-                <div className="flex justify-between items-center mb-4">
-                    <h2 className="section-title m-0">Schedule</h2>
-                </div>
+                <SectionHeader title="Schedule" />
 
                 <div className="schedule-list flex flex-col gap-4">
                     {currentDaySchedule.map((item, idx) => (
-                        <div key={idx} className={`schedule-card flex gap-4 p-4 ${item.isBreak ? 'opacity-80 border-dashed border-surface-hover' : ''}`}>
-                            <div className={`time-pill flex flex-col items-center justify-center text-center ${item.active ? 'active' : ''}`}>
-                                <span className="font-medium text-xs leading-tight whitespace-pre-line">{item.time}</span>
-                            </div>
-
-                            <div className="flex-1">
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        {item.tag && <span className="live-tag mb-2 inline-block">{item.tag}</span>}
-                                        <h3 className="text-base text-white font-semibold leading-tight">{item.title}</h3>
-                                    </div>
-                                    {item.active && <Play size={20} color="#2D88FF" />}
-                                </div>
-
-                                <div className="flex items-center gap-3 mt-2 text-gray text-sm">
-                                    <div className="flex items-center gap-1">
-                                        <MapPin size={14} className="text-blue" />
-                                        <span>{item.location}</span>
-                                    </div>
-
-                                </div>
-
-                                {item.presenter && (
-                                    <div className="flex items-center gap-2 mt-3">
-                                        {item.avatar && <img src={item.avatar} alt={item.presenter} className="w-6 h-6 rounded-full object-cover" />}
-                                        <span className="text-sm text-blue font-medium">{item.presenter}</span>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
+                        <EventCard key={idx} item={item} />
                     ))}
                 </div>
 
                 {/* Presenters */}
-                <div className="flex justify-between items-center mt-8 mb-4">
-                    <h2 className="section-title m-0">Presenters</h2>
-                </div>
-
-                <div className="speakers-horizontal-list flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                    {finalPresenters.map((presenter) => (
-                        <div key={presenter.id} className="speaker-card flex-shrink-0 flex flex-col items-center text-center p-4 w-36">
-                            <img src={presenter.avatar} alt={presenter.name} className="w-16 h-16 rounded-full object-cover mb-3 border-2 border-transparent" />
-                            <h4 className="text-sm text-white font-semibold leading-tight">{presenter.name}</h4>
-                            <p className="text-xs text-blue mt-1">{presenter.role}</p>
+                {config.features.showSpeakers && (
+                    <>
+                        <div className="mt-8">
+                            <SectionHeader title="Presenters" />
                         </div>
-                    ))}
-                </div>
 
-                {/* Featured Presenter Spotlight */}
-                {spotlightPresenter && (
-                    <div className="spotlight-card flex gap-4 p-5 mt-4 mb-4">
-                        <img src={spotlightPresenter.avatar} alt={spotlightPresenter.name} className="w-16 h-16 rounded-full object-cover" />
-                        <div>
-                            <h3 className="text-lg text-white font-semibold">{spotlightPresenter.name}</h3>
-                            <p className="text-xs text-blue font-semibold tracking-wider uppercase mt-1">{spotlightPresenter.role}</p>
-                            <p className="text-sm text-gray mt-2 leading-relaxed">
-                                {spotlightPresenter.bio}
-                            </p>
+                        <div className="speakers-horizontal-list flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                            {finalPresenters.map((presenter) => (
+                                <SpeakerProfile key={presenter.id} presenter={presenter} />
+                            ))}
                         </div>
-                    </div>
+
+                        {/* Featured Presenter Spotlight */}
+                        {spotlightPresenter && (
+                            <div className="spotlight-card flex gap-4 p-5 mt-4 mb-4">
+                                <img src={spotlightPresenter.avatar} alt={spotlightPresenter.name} className="w-16 h-16 rounded-full object-cover" />
+                                <div>
+                                    <h3 className="text-lg text-white font-semibold">{spotlightPresenter.name}</h3>
+                                    <p className="text-xs font-semibold tracking-wider uppercase mt-1" style={{ color: config.branding.colors.primary }}>{spotlightPresenter.role}</p>
+                                    <p className="text-sm text-gray mt-2 leading-relaxed">
+                                        {spotlightPresenter.bio}
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+                    </>
                 )}
             </div>
         </div>

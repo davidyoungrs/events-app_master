@@ -1,0 +1,326 @@
+{
+    "placesToEat": [
+        {
+            "title": "Taste of Texas",
+            "desc": "Prime rib & steaks in a rustic setting with vast salad bar.",
+            "price": "$$$",
+            "image": "https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=300&auto=format&fit=crop",
+            "url": "https://tasteoftexas.com/"
+        },
+        {
+            "title": "Brenner's Steakhouse",
+            "desc": "Classic steakhouse & lush gardens in Katy/Memorial.",
+            "price": "$$$$",
+            "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.brennerssteakhouse.com/location/brenners-steakhouse/"
+        },
+        {
+            "title": "State Fare Kitchen & Bar",
+            "desc": "Upscale Texas-inspired comfort food.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.statefaretx.com"
+        },
+        {
+            "title": "Pastelito's Cafe",
+            "desc": "Venezuelan pastries, arepas, and empanadas.",
+            "price": "$",
+            "image": "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?q=80&w=300&auto=format&fit=crop"
+        },
+        {
+            "title": "Resilience Viet Kitchen",
+            "desc": "Classic Vietnamese dishes like pho and banh mi.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=300&auto=format&fit=crop",
+            "url": "https://resiliencevietkitchen.com/"
+        },
+        {
+            "title": "Matsu",
+            "desc": "Authentic sushi, sashimi, and Japanese cuisine.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=300&auto=format&fit=crop",
+            "url": "http://www.matsusushibar.net"
+        },
+        {
+            "title": "Flip N Patties",
+            "desc": "Filipino-infused burgers and street food.",
+            "price": "$",
+            "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.flipnpatties.com"
+        },
+        {
+            "title": "Peacock Indian",
+            "desc": "Rich flavors of Indian cuisine like Butter Chicken.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=300&auto=format&fit=crop"
+        },
+        {
+            "title": "Naam Khao Thai",
+            "desc": "Authentic Thai featuring Pad Thai and Green Curry.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1559314809-0d155014e29e?q=80&w=300&auto=format&fit=crop",
+            "url": "https://naamkhao.com"
+        },
+        {
+            "title": "Lasagna House III",
+            "desc": "Established Italian ristorante serving traditional classics.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.lasagnahouse.com"
+        },
+        {
+            "title": "BB's Tex-Orleans",
+            "desc": "Unique blend of Texas & New Orleans cuisine.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=300&auto=format&fit=crop",
+            "url": "https://bbstexorleans.com/locations/energy-corridor/"
+        },
+        {
+            "title": "024 Grille",
+            "desc": "Upscale American dining near the Energy Corridor.",
+            "price": "$$$",
+            "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.024grille.com"
+        },
+        {
+            "title": "Arturo Boada Cuisine",
+            "desc": "Tapas-style Latin & Italian fusion.",
+            "price": "$$$",
+            "image": "https://images.unsplash.com/photo-1515443961218-a51367888e4b?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.arturoboadacuisine.com"
+        },
+        {
+            "title": "BCN Taste & Tradition",
+            "desc": "Michelin-starred authentic Spanish dining.",
+            "price": "$$$$",
+            "image": "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.bcnhouston.com"
+        },
+        {
+            "title": "Le Jardinier",
+            "desc": "Michelin-starred French culinary art.",
+            "price": "$$$$",
+            "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.lejardinier-houston.com"
+        },
+        {
+            "title": "The Annie Café and Bar",
+            "desc": "Texas-influenced American cuisine in an elegant setting.",
+            "price": "$$$",
+            "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.theanniehouston.com/"
+        },
+        {
+            "title": "Coltivare",
+            "desc": "Italian-influenced small plates and wood-fired pizzas.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.agricolehospitality.com/coltivare"
+        },
+        {
+            "title": "Nancy's Hustle",
+            "desc": "Modern bistro known for creative dishes and natural wines.",
+            "price": "$$$",
+            "image": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.nancyshustle.com"
+        },
+        {
+            "title": "Fadi's Mediterranean Grill",
+            "desc": "Cafeteria-style Mediterranean with daily specials.",
+            "price": "$$",
+            "image": "/fadis-med.png",
+            "url": "https://www.fadiscuisine.com"
+        },
+        {
+            "title": "Mary'z Mediterranean Cuisine",
+            "desc": "Lebanese favorites & Hookah.",
+            "price": "$$",
+            "image": "/maryz-med.png",
+            "url": "https://maryzmediterranean.com"
+        },
+        {
+            "title": "The Halal Guys",
+            "desc": "Fast-casual Middle Eastern chicken and gyro over rice.",
+            "price": "$",
+            "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=300&auto=format&fit=crop",
+            "url": "https://thehalalguys.com/locations/3008-ella-blvd-houston",
+            "halal": true
+        },
+        {
+            "title": "Aga's Restaurant & Catering",
+            "desc": "Renowned Indian & Pakistani halal dishes.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.agasrestaurant.com/",
+            "halal": true
+        },
+        {
+            "title": "M&M Grill",
+            "desc": "Burgers, cheesesteaks & Mexican fare using halal meats.",
+            "price": "$",
+            "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=300&auto=format&fit=crop",
+            "url": "https://places.singleplatform.com/mm-grill/menu?ref=google",
+            "halal": true
+        }
+    ],
+    "thingsToDo": [
+        {
+            "title": "Museum District",
+            "desc": "19 world-class museums",
+            "price": "Free",
+            "image": "https://images.pexels.com/photos/4258559/pexels-photo-4258559.jpeg?auto=compress&cs=tinysrgb&w=300",
+            "url": "https://houstonmuseumdistrict.org/"
+        },
+        {
+            "title": "Hermann Park",
+            "desc": "Gardens & outdoor recreation",
+            "price": "Free",
+            "image": "/hermann-park.png",
+            "url": "https://www.hermannpark.org/"
+        },
+        {
+            "title": "Downtown Aquarium",
+            "desc": "Dining & marine discovery",
+            "price": "$$",
+            "image": "/downtown-aquarium.png",
+            "url": "https://www.aquariumrestaurants.com/downtownaquariumhouston/"
+        },
+        {
+            "title": "Buffalo Bayou Park",
+            "desc": "Hiking trails & city views",
+            "price": "Free",
+            "image": "/buffalo-bayou.png",
+            "url": "https://buffalobayou.org/"
+        },
+        {
+            "title": "Houston Museum of Natural Science",
+            "desc": "Dinosaur skeletons & butterfly center",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.hmns.org/"
+        },
+        {
+            "title": "Houston Zoo",
+            "desc": "Over 6,000 animals in lush habitats",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.houstonzoo.org/"
+        },
+        {
+            "title": "The Galleria",
+            "desc": "Premier shopping & ice skating rink",
+            "price": "Free",
+            "image": "/galleria.png",
+            "url": "https://www.simon.com/mall/the-galleria"
+        },
+        {
+            "title": "Museum of Fine Arts",
+            "desc": "Expansive collection of global art",
+            "price": "$$",
+            "image": "/mfah.jpg",
+            "url": "https://www.mfah.org/"
+        }
+    ],
+    "nightlife": [
+        {
+            "title": "Anvil Bar & Refuge",
+            "desc": "Pioneering craft cocktail bar with 100 classics.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=300&auto=format&fit=crop",
+            "url": "http://www.anvilhouston.com"
+        },
+        {
+            "title": "Julep",
+            "desc": "Southern-style cocktails and elegant whiskey selection.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.julephouston.com"
+        },
+        {
+            "title": "Axelrad Beer Garden",
+            "desc": "Vibrant beer garden with hammocks and live music.",
+            "price": "$",
+            "image": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.axelradbeergarden.com/"
+        },
+        {
+            "title": "Numbers Nightclub",
+            "desc": "Iconic alternative music venue and 80s dance club.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=300&auto=format&fit=crop",
+            "url": "https://numbersnightclub.com/"
+        },
+        {
+            "title": "Cidercade Houston",
+            "desc": "Unlimited arcade games and hard cider on tap.",
+            "price": "$",
+            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.cidercade.com/"
+        },
+        {
+            "title": "Saint Arnold Brewing Company",
+            "desc": "Texas' oldest craft brewery with a massive beer hall and vibrant garden.",
+            "price": "$$",
+            "image": "https://images.unsplash.com/photo-1584225064785-c62a8b43d148?q=80&w=300&auto=format&fit=crop",
+            "url": "https://www.saintarnold.com/"
+        }
+    ],
+    "shopping": [
+        {
+            "title": "The Galleria",
+            "desc": "Texas' largest mall with 400+ stores and an ice rink.",
+            "image": "/galleria.png",
+            "url": "https://www.simon.com/mall/the-galleria"
+        },
+        {
+            "title": "Rice Village",
+            "desc": "Walkable district with eclectic boutiques and dining.",
+            "image": "/rice-village.png",
+            "url": "https://ricevillagedistrict.com/"
+        },
+        {
+            "title": "River Oaks District",
+            "desc": "Ultra-luxury open-air shopping and global brands.",
+            "image": "/river-oaks.png",
+            "url": "https://www.riveroaksdistrict.com/"
+        },
+        {
+            "title": "Highland Village",
+            "desc": "Upscale boutiques and national retailers in River Oaks.",
+            "image": "https://images.unsplash.com/photo-1692428572326-66edcffafca8?auto=format&fit=crop&q=80&w=300",
+            "url": "https://www.highlandvillage.com/"
+        },
+        {
+            "title": "Houston Premium Outlets",
+            "desc": "145+ designer outlet stores with daily savings.",
+            "image": "https://images.unsplash.com/photo-1631330200636-dea9b13ca2f1?auto=format&fit=crop&q=80&w=300",
+            "url": "https://www.premiumoutlets.com/outlet/houston"
+        },
+        {
+            "title": "Memorial City Mall",
+            "desc": "Modern mall with an NHL-sized ice rink and carousel.",
+            "image": "https://images.unsplash.com/photo-1749523909993-236463f7ff93?auto=format&fit=crop&q=80&w=300",
+            "url": "https://www.memorialcitymall.com/"
+        },
+        {
+            "title": "CityCentre",
+            "desc": "Vibrant mixed-use plaza for shopping and live music.",
+            "image": "https://images.unsplash.com/photo-1706197107628-42f6aed38356?auto=format&fit=crop&q=80&w=300",
+            "url": "https://citycentrehouston.com/"
+        },
+        {
+            "title": "Katy Mills",
+            "desc": "Massive indoor outlet mall with 175+ value stores.",
+            "image": "/katymills.jpg",
+            "url": "https://www.simon.com/mall/katy-mills"
+        }
+    ],
+    "mustSee": {
+        "title": "Space Center Houston",
+        "desc": "Journey to the stars at the home of NASA Johnson Space Center.",
+        "image": "/space shuttle.jpg",
+        "url": "https://spacecenter.org/",
+        "price": "$$"
+    },
+    "disclaimer": "THIS INFORMATION HERE IS NOT A RECOMMENDATION BY EVENT ORGANIZER"
+}
