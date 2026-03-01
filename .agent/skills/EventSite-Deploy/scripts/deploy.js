@@ -9,11 +9,11 @@ if (help || ARGS.length === 0) {
 Event Site Deployment Helper
 
 Usage:
-  node deploy.js --config <path> --agenda <path> [--discover <path>] [--presenters <path>]
+  node deploy.js --config <path> --schedule <path> [--discover <path>] [--presenters <path>]
 
 Options:
   --config      Path to the new eventConfig.json
-  --agenda      Path to the new agenda.csv
+  --schedule    Path to the new schedule.csv
   --discover    Path to the new discoverData.json (optional)
   --presenters  Path to the new presenters.csv (optional)
     `);
@@ -26,11 +26,11 @@ const getArgValue = (flag) => {
 };
 
 const configPath = getArgValue('--config');
-const agendaPath = getArgValue('--agenda');
+const schedulePath = getArgValue('--schedule');
 const discoverPath = getArgValue('--discover');
 const presentersPath = getArgValue('--presenters');
 
-const DEST_DIR = path.join(__dirname, '../../../../src/data');
+const DEST_DIR = path.join(__dirname, '../../../../public/data');
 
 const copyFile = (src, destName) => {
     if (!src) return;
@@ -50,7 +50,7 @@ if (!fs.existsSync(DEST_DIR)) {
 
 console.log('--- Starting Deployment ---');
 copyFile(configPath, 'eventConfig.json');
-copyFile(agendaPath, 'agenda.csv');
+copyFile(schedulePath, 'schedule.csv');
 copyFile(discoverPath, 'discoverData.json');
 copyFile(presentersPath, 'presenters.csv');
 console.log('--- Deployment Complete ---');

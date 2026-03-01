@@ -11,7 +11,7 @@ export default function Header() {
         return (
             <header className="app-header home-header flex justify-between items-center w-full">
                 <div className="logo flex items-center gap-2">
-                    <img src={config.branding.logoUrl} alt={config.meta.eventName} style={{ height: '24px' }} />
+                    <img src={config.branding.logo} alt={config.meta.eventName} style={{ height: '24px' }} />
                 </div>
                 <div className="actions flex items-center gap-4">
                     {/* Icons removed as requested */}
@@ -24,7 +24,7 @@ export default function Header() {
         return (
             <header className="app-header schedule-header flex justify-between items-center w-full">
                 <div className="flex items-center gap-2">
-                    <img src={config.branding.logoUrl} alt={config.meta.eventName} style={{ height: '24px' }} />
+                    <img src={config.branding.logo} alt={config.meta.eventName} style={{ height: '24px' }} />
                 </div>
                 {/* Bell icon removed as requested */}
             </header>

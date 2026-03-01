@@ -39,14 +39,20 @@ export default function HomeScreen() {
     return (
         <div className="home-screen">
             {/* Hero Section with Background Image */}
-            <div className="hero-section flex flex-col items-center justify-center">
+            <div
+                className="hero-section flex flex-col items-center justify-center text-white"
+                style={config.branding.heroBackground ? { backgroundImage: `url(${config.branding.heroBackground})` } : {}}
+            >
                 <div className="hero-overlay"></div>
 
                 <div className="hero-content flex flex-col items-center text-center">
                     {config.branding.heroImage && (
-                        <div className="event-icon-container drop-shadow-lg" style={{ width: 'auto', padding: '0 20px', backgroundColor: 'transparent', border: 'none' }}>
-                            <img src={config.branding.heroImage} alt="Event Hero" style={{ height: '40px' }} />
-                        </div>
+                        <img
+                            src={config.branding.heroImage}
+                            alt="Event Hero"
+                            className="hero-logo drop-shadow-lg mb-6"
+                            style={{ height: '40px', width: 'auto' }}
+                        />
                     )}
                     <h1 className="hero-title drop-shadow-xl text-shadow">
                         {titleFirstHalf} <br />
@@ -106,22 +112,42 @@ export default function HomeScreen() {
                 </div>
             )}
 
-            {/* Venue Section */}
-            {config.meta.venue && (
-                 <div className="venue-section mt-8 mb-6">
-                 <h3 className="section-title">Event Venue</h3>
-                 <a
-                     href={config.meta.venue.url}
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     className="venue-card-hero mt-4 block"
-                 >
-                     <div className="venue-hero-overlay flex flex-col justify-end p-5">
-                         <h4 className="text-white font-bold text-xl mb-1 drop-shadow-md">{config.meta.venue.name}</h4>
-                         <p className="text-white text-opacity-100 text-sm drop-shadow-md font-medium">{config.meta.venue.description}</p>
-                     </div>
-                 </a>
-             </div>
+            {/* Venue Section (Celeros Westplain) */}
+            {config.contact.venue && (
+                <div className="venue-section mt-8 mb-4">
+                    <h3 className="section-title">Event Venue</h3>
+                    <a
+                        href={config.contact.venue.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="venue-card-hero mt-4 block"
+                        style={config.contact.venue.image ? { backgroundImage: `url(${config.contact.venue.image})` } : {}}
+                    >
+                        <div className="venue-hero-overlay flex flex-col justify-end p-5">
+                            <h4 className="text-white font-bold text-xl mb-1 drop-shadow-md">{config.contact.venue.name}</h4>
+                            <p className="text-white text-opacity-100 text-sm drop-shadow-md font-medium">{config.contact.venue.address}</p>
+                        </div>
+                    </a>
+                </div>
+            )}
+
+            {/* Accommodation Section (Hyatt) */}
+            {config.contact.accommodation && (
+                <div className="venue-section mt-8 mb-6">
+                    <h3 className="section-title">Hotel / Accommodation</h3>
+                    <a
+                        href={config.contact.accommodation.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="venue-card-hero mt-4 block"
+                        style={config.contact.accommodation.image ? { backgroundImage: `url(${config.contact.accommodation.image})` } : {}}
+                    >
+                        <div className="venue-hero-overlay flex flex-col justify-end p-5">
+                            <h4 className="text-white font-bold text-xl mb-1 drop-shadow-md">{config.contact.accommodation.name}</h4>
+                            <p className="text-white text-opacity-100 text-sm drop-shadow-md font-medium">{config.contact.accommodation.address}</p>
+                        </div>
+                    </a>
+                </div>
             )}
         </div>
     );

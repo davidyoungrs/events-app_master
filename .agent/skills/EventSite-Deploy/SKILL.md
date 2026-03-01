@@ -12,14 +12,14 @@ This skill automates the process of transforming the `event-app_master` template
 ### 1. Configuration Check
 Ensure the following files are provided or available:
 - `eventConfig.json`: Branding, contact info, and feature toggles.
-- `agenda.csv`: The core event schedule.
+- `schedule.csv`: The core event schedule.
 - `discoverData.json`: (Optional) Customized places to eat, things to do, etc.
 - `presenters.csv`: (Optional) List of speakers and their details.
 
 ### 2. Asset Preparation
-Place the following assets in `public/assets/`:
-- `logo.svg` / `logo.png`: The event logo.
-- `hero-bg.jpg`: The home screen background.
+Place the following assets in `public/`:
+- `company_logo.svg`: The event logo.
+- `hero_image.svg`: The home screen background.
 - `favicon.ico`: The site favicon.
 
 ### 3. Execution Script
@@ -27,8 +27,8 @@ The skill uses a helper script to validate and swap data.
 
 // turbo
 ```bash
-# Example command to run the deployment helper (to be implemented)
-node .agent/skills/EventSite-Deploy/scripts/deploy.js --config path/to/new/config.json --agenda path/to/new/agenda.csv
+# Example command to run the deployment helper
+node .agent/skills/EventSite-Deploy/scripts/deploy.js --config path/to/new/config.json --schedule path/to/new/schedule.csv
 ```
 
 ## Deployment Steps for Agents

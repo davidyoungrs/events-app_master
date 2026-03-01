@@ -1,7 +1,8 @@
 {
     "meta": {
-        "eventName": "Celeros Channel Partner Event 2026",
-        "dates": "January 14th - 16th, 2026",
+        "eventName": "M&J Channel Partner Event 2026",
+        "dates": "April 20th - 22nd, 2026",
+        "startDate": "2026-04-20T08:00:00",
         "location": "Houston, Texas",
         "timezone": "America/Chicago",
         "supportEmail": "events@celerosft.com",
@@ -10,12 +11,14 @@
             {
                 "id": "q1",
                 "label": "HOTEL INFO",
-                "span": 1
+                "span": 1,
+                "url": "https://www.hyatt.com/hyatt-regency/en-US/houro-hyatt-regency-houston-west?src=agn_koddi_crp_chico_ppc_21847613925_Conversion_Regency_Google_Search_English_HOURO_Houston_Paid_Brand_CrossDevice_1x1_google_Koddi-TopUp-Evergreen-Brand_e_hyatt%20regency%20houston%20west&gad_source=1&gad_campaignid=21847613925&gclid=Cj0KCQiA5I_NBhDVARIsAOrqIsZe0qqPQdB3TIlRbZzva1HVZesR-CBfvlAn8jRcRKeWaaGrPrubCrEaAip8EALw_wcB"
             },
             {
                 "id": "q2",
                 "label": "MAP",
-                "span": 1
+                "span": 1,
+                "url": "https://www.google.com/maps/search/?api=1&query=29.786560624048814,-95.61903053262631"
             },
             {
                 "id": "q3",
@@ -25,8 +28,9 @@
         ]
     },
     "branding": {
-        "heroImage": "/copes-vulcan-hero.svg",
-        "logo": "/celeros-logo.svg",
+        "heroBackground": "/hero_background_mj.jpg",
+        "heroImage": "/hero_image.png",
+        "logo": "/company_logo.svg",
         "colors": {
             "primary": "#4BC0D9",
             "secondary": "#2D3E50",
@@ -40,13 +44,21 @@
         "showWeather": true,
         "showDiscover": true,
         "showInfo": true,
+        "showSpeakers": true,
         "enableRegistration": false
     },
     "contact": {
         "venue": {
-            "name": "JW Marriott Houston by The Galleria",
-            "address": "5150 Westheimer Rd, Houston, TX 77056",
-            "mapUrl": "https://maps.app.goo.gl/..."
+            "name": "Celeros Westplain",
+            "address": "8800 Westplain Drive, Houston, Texas, 77041",
+            "mapUrl": "https://www.google.com/maps/search/?api=1&query=8800+Westplain+Drive,+Houston,+Texas,+77041",
+            "image": "/venue_celeros.jpg"
+        },
+        "accommodation": {
+            "name": "Hyatt Regency West, Houston",
+            "address": "13210 Katy Fwy, Houston, TX 77079",
+            "url": "https://www.hyatt.com/hyatt-regency/en-US/houro-hyatt-regency-houston-west?src=agn_koddi_crp_chico_ppc_21847613925_Conversion_Regency_Google_Search_English_HOURO_Houston_Paid_Brand_CrossDevice_1x1_google_Koddi-TopUp-Evergreen-Brand_e_hyatt%20regency%20houston%20west&gad_source=1&gad_campaignid=21847613925&gclid=Cj0KCQiA5I_NBhDVARIsAOrqIsZe0qqPQdB3TIlRbZzva1HVZesR-CBfvlAn8jRcRKeWaaGrPrubCrEaAip8EALw_wcB",
+            "image": "/hyatt-venue.svg"
         }
     }
 }
