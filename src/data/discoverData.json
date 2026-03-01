@@ -128,14 +128,14 @@
             "title": "Fadi's Mediterranean Grill",
             "desc": "Cafeteria-style Mediterranean with daily specials.",
             "price": "$$",
-            "image": "/fadis-med.png",
+            "image": "/fadis-med.webp",
             "url": "https://www.fadiscuisine.com"
         },
         {
             "title": "Mary'z Mediterranean Cuisine",
             "desc": "Lebanese favorites & Hookah.",
             "price": "$$",
-            "image": "/maryz-med.png",
+            "image": "/maryz-med.webp",
             "url": "https://maryzmediterranean.com"
         },
         {
@@ -175,21 +175,21 @@
             "title": "Hermann Park",
             "desc": "Gardens & outdoor recreation",
             "price": "Free",
-            "image": "/hermann-park.png",
+            "image": "/hermann-park.webp",
             "url": "https://www.hermannpark.org/"
         },
         {
             "title": "Downtown Aquarium",
             "desc": "Dining & marine discovery",
             "price": "$$",
-            "image": "/downtown-aquarium.png",
+            "image": "/downtown-aquarium.webp",
             "url": "https://www.aquariumrestaurants.com/downtownaquariumhouston/"
         },
         {
             "title": "Buffalo Bayou Park",
             "desc": "Hiking trails & city views",
             "price": "Free",
-            "image": "/buffalo-bayou.png",
+            "image": "/buffalo-bayou.webp",
             "url": "https://buffalobayou.org/"
         },
         {
@@ -210,14 +210,14 @@
             "title": "The Galleria",
             "desc": "Premier shopping & ice skating rink",
             "price": "Free",
-            "image": "/galleria.png",
+            "image": "/galleria.webp",
             "url": "https://www.simon.com/mall/the-galleria"
         },
         {
             "title": "Museum of Fine Arts",
             "desc": "Expansive collection of global art",
             "price": "$$",
-            "image": "/mfah.jpg",
+            "image": "/mfah.webp",
             "url": "https://www.mfah.org/"
         }
     ],
@@ -269,19 +269,19 @@
         {
             "title": "The Galleria",
             "desc": "Texas' largest mall with 400+ stores and an ice rink.",
-            "image": "/galleria.png",
+            "image": "/galleria.webp",
             "url": "https://www.simon.com/mall/the-galleria"
         },
         {
             "title": "Rice Village",
             "desc": "Walkable district with eclectic boutiques and dining.",
-            "image": "/rice-village.png",
+            "image": "/rice-village.webp",
             "url": "https://ricevillagedistrict.com/"
         },
         {
             "title": "River Oaks District",
             "desc": "Ultra-luxury open-air shopping and global brands.",
-            "image": "/river-oaks.png",
+            "image": "/river-oaks.webp",
             "url": "https://www.riveroaksdistrict.com/"
         },
         {
@@ -311,14 +311,14 @@
         {
             "title": "Katy Mills",
             "desc": "Massive indoor outlet mall with 175+ value stores.",
-            "image": "/katymills.jpg",
+            "image": "/katymills.webp",
             "url": "https://www.simon.com/mall/katy-mills"
         }
     ],
     "mustSee": {
         "title": "Space Center Houston",
         "desc": "Journey to the stars at the home of NASA Johnson Space Center.",
-        "image": "/space shuttle.jpg",
+        "image": "/space shuttle.webp",
         "url": "https://spacecenter.org/",
         "price": "$$"
     },

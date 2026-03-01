@@ -28,8 +28,8 @@
         ]
     },
     "branding": {
-        "heroBackground": "/hero_background_mj.jpg",
-        "heroImage": "/hero_image.png",
+        "heroBackground": "/hero_background_mj.webp",
+        "heroImage": "/hero_image.webp",
         "logo": "/company_logo.svg",
         "colors": {
             "primary": "#4BC0D9",
@@ -52,7 +52,7 @@
             "name": "Celeros Westplain",
             "address": "8800 Westplain Drive, Houston, Texas, 77041",
             "mapUrl": "https://www.google.com/maps/search/?api=1&query=8800+Westplain+Drive,+Houston,+Texas,+77041",
-            "image": "/venue_celeros.jpg"
+            "image": "/venue_celeros.webp"
         },
         "accommodation": {
             "name": "Hyatt Regency West, Houston",
